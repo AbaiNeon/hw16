@@ -11,6 +11,14 @@ namespace hw16
     {
         static void Main(string[] args)
         {
+            //firstTask();
+            secondTask();
+
+            Console.ReadLine();
+        }
+
+        static void firstTask()
+        {
             List<Item> list1 = new List<Item>();
 
             XmlDocument xDoc = new XmlDocument();
@@ -47,8 +55,34 @@ namespace hw16
                     list1.Add(new Item() { Title = title, Link = link, Description = description, PubDate = pubDate });
                 }
             }
+        }
+        static void secondTask()
+        {
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load("../../Students.xml");
 
-            Console.ReadLine();
+            // получим корневой элемент
+            XmlElement xRoot = xDoc.DocumentElement;
+
+            foreach (XmlNode xnode in xRoot)
+            {
+                foreach (XmlNode childnode in xnode.ChildNodes)
+                {
+                    if (childnode.Name == "name")
+                    {
+                        Console.WriteLine("Имя: {0}", childnode.InnerText);
+                    }
+                    if (childnode.Name == "group")
+                    {
+                        Console.WriteLine("Группа: {0}", childnode.InnerText);
+                    }
+                    if (childnode.Name == "age")
+                    {
+                        Console.WriteLine("Возраст: {0}", childnode.InnerText);
+                    }
+                }
+                Console.WriteLine();
+            }
         }
     }
 }

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<students>
+  <student>
+    <name>Alex</name>
+    <group>SMP171</group>
+    <age>28</age>
+  </student>
+  <student>
+    <name>Petr</name>
+    <group>SMP172</group>
+    <age>29</age>
+  </student>
+  <student>
+    <name>Max</name>
+    <group>SMP173</group>
+    <age>30</age>
+  </student>
+</students>
